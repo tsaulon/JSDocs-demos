@@ -1,3 +1,9 @@
+
+/**
+ * @param {String} name An argument which represents the name of the person.
+ * @param {Number} age An argument which represents the age of the person.
+ * @constructor
+ */
 const Person = class Person {
 
     constructor(name = "", age = 0) {
@@ -10,6 +16,9 @@ const Person = class Person {
     get name() { return this.m_name; }
     set name(name) { this.m_name = name; }
 
+    /**
+     * @return {String} Returns a human-readable representation of the Person object.
+     */
     async describe() {
         
         if(this.age > 0 && this.name.length > 0) {
@@ -19,13 +28,4 @@ const Person = class Person {
     }
 }
 
-const SuperHero = class SuperHero extends Person {
-
-    constructor(name, age, superHeroName) {
-        super(name, age);
-        this.m_superHeroName = superHeroName;
-    }
-}
-
 module.exports = Person;
-module.exports = SuperHero;

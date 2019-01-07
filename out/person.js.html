@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: counter.js</title>
+    <title>JSDoc: Source: person.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: counter.js</h1>
+    <h1 class="page-title">Source: person.js</h1>
 
     
 
@@ -26,20 +26,38 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
-* @desc This is an exported function which simulates an incremental counter using a closure.
-* @param {Number} start This is a param which recieves a Number value and defaults to 0.
-* @param {Number} increment This is a param which recieves a Number value and defaults to a 1.
-* @return {Function} This returns a function closure where the closure returns the incremented value
-*/
-module.exports = function counter(start = 0, increment = 1) {
+            <pre class="prettyprint source linenums"><code>
+/**
+ * @param {String} name An argument which represents the name of the person.
+ * @param {Number} age An argument which represents the age of the person.
+ * @constructor
+ */
+const Person = class Person {
 
-    let counter = start;
+    constructor(name = "", age = 0) {
+        this.m_name = name;
+        this.m_age = age;
+    }
 
-    return () => {
-        return counter += increment;
-    };
-}</code></pre>
+    get age() { return this.m_age; }
+    set age(age) { this.m_age = age; }
+    get name() { return this.m_name; }
+    set name(name) { this.m_name = name; }
+
+    /**
+     * @return {String} Returns a human-readable representation of the object.
+     */
+    async describe() {
+        
+        if(this.age > 0 &amp;&amp; this.name.length > 0) {
+            return `${this.name} is ${this.age} years old.`;
+        }
+
+    }
+}
+
+module.exports = Person;
+</code></pre>
         </article>
     </section>
 
