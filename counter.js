@@ -1,3 +1,5 @@
+/** @module counter */
+
 /**
 * @desc This is an exported function which simulates an incremental counter using a closure.
 * @param {Number} start This is a param which recieves a Number value and defaults to 0.

@@ -1,5 +1,6 @@
+//  This module purposely doesn't use comment conventions.
 const counter = require('./counter')(5, 5);
-const People = require("./person");
+const People = require("./people");
 
 let arr = [];
 
